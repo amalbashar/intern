@@ -14,11 +14,11 @@ const Form = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false); // لحالة عرض الـ popup
-  const [submittedData, setSubmittedData] = useState(null); // البيانات التي تم إرسالها
+  const [successMessage, setSuccessMessage] = useState("");
 
   const fields = [
-    // الحقول نفسها كما هي، لا حاجة لتغييرها
+        // الانبوتس زي ما هي
+ 
     {
       label: "Full Name*",
       type: "text",
@@ -138,8 +138,10 @@ const Form = () => {
       return;
     }
 
-    setSubmittedData(formData); // حفظ البيانات المرسلة
-    setIsSubmitted(true); // عرض الـ popup
+    console.log("Submitted Data:", formData); 
+
+    setSuccessMessage("Form submitted successfully!");
+
     setFormData({
       name: "",
       email: "",
@@ -148,12 +150,11 @@ const Form = () => {
       age: "",
       country: "",
       agreeToTerms: false,
-    }); // تفريغ الحقول
-    setErrors({}); // مسح الأخطاء
-  };
-
-  const closePopup = () => {
-    setIsSubmitted(false); // إخفاء الـ popup
+    });
+    setErrors({});
+    setTimeout(() => {
+      setSuccessMessage("");
+    }, 3000);
   };
 
   return (
@@ -189,13 +190,16 @@ const Form = () => {
         </button>
       </form>
 
-      {isSubmitted && (
-        <div className="popup">
-          <div className="popup-content">
-            <h2>Form Submitted Successfully!</h2>
-            <pre>{JSON.stringify(submittedData, null, 2)}</pre>
-            <button onClick={closePopup}>Close</button>
-          </div>
+      {successMessage && (
+        <div
+          style={{
+            color: "green",
+            marginTop: "10px",
+            fontWeight: "bold",
+            textAlign: "center",
+          }}
+        >
+          {successMessage}
         </div>
       )}
     </div>
