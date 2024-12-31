@@ -1,0 +1,32 @@
+/* src/styles/styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+    color: var(--text-color);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    color: var(--primary-color);
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+  
+  button {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #008f4f; 
+  }
+  

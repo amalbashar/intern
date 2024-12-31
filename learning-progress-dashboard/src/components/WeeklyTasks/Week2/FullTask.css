@@ -1,0 +1,143 @@
+.full-task-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.navigation {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.navigation button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.navigation button.active {
+  background-color: #0056b3;
+  font-weight: bold;
+}
+
+.content {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  color: black;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+/* الحاوية العامة للجدول */
+.task-table-container {
+  width: 100%;
+  max-height: 250px; /* تحديد أقصى ارتفاع للجدول */
+  overflow-y: auto; /* تمكين شريط التمرير العمودي */
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* تصميم الجدول */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.task-table th,
+.task-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* تنسيق الرأس */
+.task-table th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* صفوف البيانات */
+.task-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.task-table tr:hover {
+  background-color: #e8f5e9;
+}
+
+/* أزرار الأكشن */
+.task-table button {
+  padding: 8px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
+
+.task-table button:first-child {
+  background-color: #2196f3;
+}
+
+.task-table button:first-child:hover {
+  background-color: #1769aa;
+}
+
+.task-table button:last-child {
+  background-color: #f44336;
+}
+
+.task-table button:last-child:hover {
+  background-color: #c62828;
+}
