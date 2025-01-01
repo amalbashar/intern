@@ -1,19 +1,23 @@
 import React from "react";
 import "./Maze.css";
 
-const Maze = ({ currentStep, totalSteps }) => {
-  return (
-    <div className="maze-container">
-      {Array.from({ length: totalSteps }, (_, index) => (
+const Maze = ({ progress, totalSteps }) => {
+  const renderMaze = () => {
+    const cells = [];
+    for (let i = 0; i < totalSteps; i++) {
+      cells.push(
         <div
-          key={index}
-          className={`maze-step ${index < currentStep ? "completed" : ""}`}
+          key={i}
+          className={`maze-cell ${i < progress ? "completed" : ""}`}
         >
-          {index + 1}
+          {i === progress && <span className="player">P</span>}
         </div>
-      ))}
-    </div>
-  );
+      );
+    }
+    return cells;
+  };
+
+  return <div className="maze-grid">{renderMaze()}</div>;
 };
 
 export default Maze;

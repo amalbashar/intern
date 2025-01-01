@@ -2,11 +2,8 @@ import React, { useRef, useEffect } from "react";
 import Message from "./Message";
 
 function ChatWindow({ messages }) {
-  const chatEndRef = useRef(null);
-
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+ 
+ 
 
   return (
     <div
@@ -25,7 +22,6 @@ function ChatWindow({ messages }) {
           timestamp={msg.timestamp}
         />
       ))}
-      <div ref={chatEndRef} />
     </div>
   );
 }

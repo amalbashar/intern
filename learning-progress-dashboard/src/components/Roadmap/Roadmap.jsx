@@ -1,18 +1,21 @@
 import React from "react";
 import "./Roadmap.css";
 
-const Roadmap = ({ weeks, onWeekClick }) => {
+const Roadmap = ({ onWeekClick }) => {
+  const weeks = Array.from({ length: 12 }, (_, index) => ({
+    number: index + 1,
+    isCompleted: false, // يمكن تحديث هذه الحالة بناءً على تقدم المستخدم
+  }));
+
   return (
     <div className="roadmap-container">
-      {weeks.map((week, index) => (
+      {weeks.map((week) => (
         <div
           key={week.number}
-          className={`roadmap-week ${
-            week.isCompleted ? "completed" : "not-completed"
-          }`}
+          className={`roadmap-week ${week.isCompleted ? "completed" : ""}`}
           onClick={() => onWeekClick(week.number)}
         >
-          <span>Week {week.number}</span>
+          Week {week.number}
         </div>
       ))}
     </div>

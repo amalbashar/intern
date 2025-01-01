@@ -1,74 +1,76 @@
 /* تصميم الناف بار */
 .navbar {
-    display: flex;
-    justify-content: space-between; /* توزيع العناصر */
-    align-items: center;
-    background-color: var(--background-color);
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* الشعار */
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    gap: 1px; /* مسافة بين الصورة والنص */
-  }
-  
-  .logo-image {
-    height: 77px;
-    width: auto;
-  }
-  
-  .logo-text {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .site-name {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--primary-color);
-  }
-  
-  .site-tagline {
-    font-size: 0.8rem;
-    color: var(--text-color);
-  }
-  
-  /* الروابط */
-  .navbar-links {
-    display: flex;
-    list-style: none;
-    gap: 20px; /* مسافة بين الروابط */
-  }
-  
-  .navbar-links a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .navbar-links a:hover {
-    color: var(--secondary-color);
-  }
-  
-  /* زر Call to Action */
-  .navbar-cta {
-    margin-left: auto; /* دفع الزر إلى أقصى اليمين */
-  }
-  
-  .cta-button {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .cta-button:hover {
-    background-color: var(--secondary-color);
-  }
-  
+  display: flex;
+  justify-content: space-between; /* توزيع العناصر */
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; /* جعل الناف بار ثابتًا */
+  top: 0; /* تحديد المسافة من أعلى الصفحة */
+  z-index: 1000; /* ضمان أن الناف بار يبقى فوق العناصر الأخرى */
+}
+
+/* الشعار */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 1px; /* مسافة بين الصورة والنص */
+}
+
+.logo-image {
+  height: 77px;
+  width: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.site-tagline {
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+/* الروابط */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* مسافة بين الروابط */
+}
+
+.navbar-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-links a:hover {
+  color: var(--secondary-color);
+}
+
+/* زر Call to Action */
+.navbar-cta {
+  margin-left: auto; 
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+}
