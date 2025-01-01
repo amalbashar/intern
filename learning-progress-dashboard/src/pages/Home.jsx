@@ -47,8 +47,7 @@ const Home = () => {
       setCompletedTopics([...completedTopics, topic]);
     }
   };
-////// ارجعي زبطي هون لازم يسيفو مو يشيلو و يكوةن نفسو يلي جوا الديتيلز    - تنبيه
-/// حتعملي انو كل ما يقرا توبيك يعملها دن وتمشي البروسس معو مش تتعاجزي تسويها هاا
+
 
 
   const handleWeekClick = (weekNumber) => {
