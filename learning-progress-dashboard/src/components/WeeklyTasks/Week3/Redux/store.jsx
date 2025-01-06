@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import favoritesReducer from "./favoritesSlice";
 
-// حفظ البيانات في Local Storage
 const saveToLocalStorage = (state) => {
   try {
     const serializedState = JSON.stringify(state);
@@ -11,7 +10,6 @@ const saveToLocalStorage = (state) => {
   }
 };
 
-// استعادة البيانات من Local Storage
 const loadFromLocalStorage = () => {
   try {
     const serializedState = localStorage.getItem("reduxState");

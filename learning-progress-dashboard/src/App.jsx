@@ -6,6 +6,8 @@ import WeekDetails from "./pages/WeekDetails";
 import ReduxFavorites from "./components/WeeklyTasks/Week3/Pages/ReduxFavorites";
 import ContextFavorites from "./components/WeeklyTasks/Week3/Pages/ContextFavorites";
 
+
+
 function App() {
   return (
     <Router>
@@ -20,6 +22,7 @@ function App() {
         {/* الصفحات الإضافية */}
         <Route path="/redux-favorites" element={<ReduxFavorites />} />
         <Route path="/context-favorites" element={<ContextFavorites />} />
+
       </Routes>
     </Router>
   );
