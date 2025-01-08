@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import api from "../Services/axiosInstance";
+import api from "../../ecom/axiosInstance";
 
 //بجيب البرودكتس من ال api
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {

@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import favoritesReducer from "./favoritesSlice";
+import favoritesReducer from "./chat/favoritesSlice";
+import productReducer from "./ecom/productSlice"; 
+import cartReducer from "./ecom/cartSlice"; 
 
-// حفظ البيانات في Local Storage
+
 const saveToLocalStorage = (state) => {
   try {
     const serializedState = JSON.stringify(state);
@@ -11,7 +13,6 @@ const saveToLocalStorage = (state) => {
   }
 };
 
-// استعادة البيانات من Local Storage
 const loadFromLocalStorage = () => {
   try {
     const serializedState = localStorage.getItem("reduxState");
@@ -23,21 +24,32 @@ const loadFromLocalStorage = () => {
   }
 };
 
-// تحميل الحالة المحفوظة
 const persistedState = loadFromLocalStorage();
 
 const store = configureStore({
   reducer: {
     reduxFavorites: favoritesReducer,
+    products: productReducer, 
+    cart: cartReducer,
+
+
   },
   preloadedState: persistedState,
 });
 
-// الاشتراك في تغييرات الـ Store لحفظ الحالة
 store.subscribe(() => {
-  saveToLocalStorage({
-    reduxFavorites: store.getState().reduxFavorites,
-  });
+  const currentState = store.getState();
+
+  if (localStorage.getItem("isAuthenticated") === "true") {
+    saveToLocalStorage(currentState);
+  } else {
+    localStorage.removeItem("reduxState");
+  }
+
 });
+
+
+
+
 
 export default store;

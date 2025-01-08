@@ -9,9 +9,6 @@ import { Provider } from "react-redux";
 import store from "../components/WeeklyTasks/Week3/Redux/store";
 import "./Home.css";
 
-import FullTaskWeek4 from "../components/WeeklyTasks/Week4/FullTask";
-
-
 const Home = () => {
   const [selectedWeek, setSelectedWeek] = useState(null);
   const [completedTopics, setCompletedTopics] = useState([]);
@@ -43,10 +40,6 @@ const Home = () => {
         </FavoritesProvider>
       </TaskProvider>
     ),
-  4: (<FullTaskWeek4 />)
-  // حطيت الستور تاعو بصفحة ال main.jsx  
-  // لانو ستور ويك  3 نفس اسمو ☺ معلش 
-
   };
 
   const handleTopicComplete = (topic) => {
@@ -54,7 +47,8 @@ const Home = () => {
       setCompletedTopics([...completedTopics, topic]);
     }
   };
-
+////// ارجعي زبطي هون لازم يسيفو مو يشيلو و يكوةن نفسو يلي جوا الديتيلز    - تنبيه
+/// حتعملي انو كل ما يقرا توبيك يعملها دن وتمشي البروسس معو مش تتعاجزي تسويها هاا
 
 
   const handleWeekClick = (weekNumber) => {
@@ -76,8 +70,6 @@ const Home = () => {
     <div className="home-container">
       {!selectedWeek ? (
         <>
-              
-
           <h1>My Learning Journey</h1>
           <Roadmap onWeekClick={handleWeekClick} />
         </>

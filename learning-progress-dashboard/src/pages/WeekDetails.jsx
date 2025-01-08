@@ -8,9 +8,6 @@ import { FavoritesProvider } from "../components/WeeklyTasks/Week3/Components/Fa
 import { Provider } from "react-redux";
 import store from "../components/WeeklyTasks/Week3/Redux/store";
 
-import FullTaskWeek4 from "../components/WeeklyTasks/Week4/FullTask";
-
-
 const WeekDetails = () => {
   const weeksData = {
     1: {
@@ -49,21 +46,6 @@ const WeekDetails = () => {
             </Provider>
           </FavoritesProvider>
         </TaskProvider>
-      ),
-    },
-   4 : {
-      topics: [
-        { title: "Redux Toolkit", content: "Redux Toolkit simplifies managing global state." },
-    { title: "createAsyncThunk", content: "Handle asynchronous actions with createAsyncThunk." },
-    { title: "Redux with API", content: "Integrate Redux with RESTful APIs using Axios." },
-      ],
-      fullTask: (
-      
-              <FullTaskWeek4 />
-              // حطيت الستور تاعو بصفحة ال main.jsx  
-              // لانو ستور ويك  3 نفس اسمو ☺ معلش 
-
-           
       ),
     },
   };
